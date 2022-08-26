@@ -1,0 +1,47 @@
+package com.example.splash.ui.sura_details
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.splash.R
+import com.example.splash.ui.home.quranfragment.SuraNamesAdapter
+
+class SuraVerseAdapter (val items: ArrayList<String>) : RecyclerView.Adapter<SuraVerseAdapter.ViewHolder>()
+{
+
+        class ViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView)
+        {
+            val suraNametextview =itemView.findViewById<TextView>(R.id.item_sura_name_title)
+
+        }
+
+        override fun getItemCount(): Int
+        {
+            return items.size
+        }
+
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
+        {
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_soura_name,parent,false)
+            return  ViewHolder(view)
+        }
+
+
+        override fun onBindViewHolder(holder: ViewHolder, position: Int)
+        {
+            holder.suraNametextview.setText(items.get(position))
+            holder.suraNametextview.setOnClickListener()
+            {
+                OnSuraNamelicked?.OnItemClickListner(items.get(position),position)
+            }
+        }
+        interface OnItemClickListner
+        {
+            fun OnItemClickListner (item: String, index:Int)
+        }
+        var OnSuraNamelicked : OnItemClickListner?= null
+
+    }

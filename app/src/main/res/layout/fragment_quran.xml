@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.quranfragment.FragmentQuran"
+    android:background="@drawable/home">
+<ImageView
+    android:id="@+id/quran_logo"
+    android:layout_width="wrap_content"
+    android:layout_height="0dp"
+    android:src="@drawable/quran_logo"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintHeight_percent="0.25"
+    android:adjustViewBounds="true"
+
+    />
+<View
+    android:id="@+id/TopLine"
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    app:layout_constraintTop_toBottomOf="@id/quran_logo"
+    android:background="@color/gold"
+    android:layout_marginTop="12dp"
+    />
+ <TextView
+     android:id="@+id/SuraNameLabel"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     app:layout_constraintTop_toBottomOf="@id/TopLine"
+     android:text="إسم السوره"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     android:layout_margin="12dp"
+     android:textSize="25sp"
+     android:textStyle="bold"
+
+     />
+
+    <View
+        android:id="@+id/BottomLine"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintTop_toBottomOf="@id/SuraNameLabel"
+        android:background="@color/gold"
+        android:layout_marginTop="12dp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/SuraNameRecyculaerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/BottomLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+       tools:listitem="@layout/item_soura_name"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
