@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Splash"
         tools:targetApi="31">
         <activity
-            android:name=".ui.mesbaha.Sebha"
+            android:name="com.example.splash.ui.home.mesbaha.Sebha"
             android:exported="false" />
         <activity
             android:name=".ui.sura_details.SuraNameActivity"

@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.splash.R
 import com.example.splash.ui.home.Ahadeth.AhadethFragment
 import com.example.splash.ui.home.quranfragment.FragmentQuran
+import com.example.splash.ui.home.mesbaha.FragmentSebha
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeScreen : AppCompatActivity()
@@ -32,7 +33,7 @@ class HomeScreen : AppCompatActivity()
                  }
             else
                  {
-                     supportFragmentManager.beginTransaction().replace(R.id.FragmentContainer,FragmentSebha()).commit()
+                     supportFragmentManager.beginTransaction().replace(R.id.FragmentContainer, FragmentSebha()).commit()
 
                  }
 

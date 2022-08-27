@@ -48,7 +48,7 @@ RecyclerView HadRec;
     private ArrayList<HadethModel> getlist()
     {
         ArrayList<HadethModel> list= new ArrayList<> ();
-        for(int i=0; i<=40;i++)
+        for(int i=0; i<40;i++)
         {
                String S="رقم الحديث"+1;
                list.add( new HadethModel(S));

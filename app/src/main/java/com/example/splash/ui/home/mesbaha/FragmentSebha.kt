@@ -1,4 +1,4 @@
-package com.example.splash.ui.home
+package com.example.splash.ui.home.mesbaha
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
