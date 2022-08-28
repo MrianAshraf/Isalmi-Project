@@ -2,13 +2,9 @@ package com.example.splash.ui.home.quranfragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.splash.R
-import com.google.android.material.navigation.NavigationBarView
-//SuraNameRecyculaerView
 class SuraNamesAdapter(val items: Array<String>) : RecyclerView.Adapter<SuraNamesAdapter.ViewHolder>()
 {
     class ViewHolder(val itemView:View) :RecyclerView.ViewHolder(itemView)

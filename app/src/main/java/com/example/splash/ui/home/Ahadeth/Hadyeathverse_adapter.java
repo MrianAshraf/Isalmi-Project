@@ -13,37 +13,28 @@ import com.example.splash.R;
 
 import java.util.ArrayList;
 
-public class AhdethAdapter extends RecyclerView.Adapter<AhdethAdapter.AhadethViewholder> {
+public class Hadyeathverse_adapter extends RecyclerView.Adapter<Hadyeathverse_adapter.HadyeathverseViewholder> {
+    public ArrayList<String> ahadeth;
 
-
-    String[] ahadeth = new String[50];
-
-    public AhdethAdapter(String[] ahadeth) {
+    public Hadyeathverse_adapter(ArrayList<String> ahadeth) {
         this.ahadeth = ahadeth;
     }
 
-//    public ArrayList<String> hadethlines;
-//
-//    public Ahadeth_adapter(ArrayList<String> hadethlines) {
-//        this.hadethlines = hadethlines;
-//    }
-
-
     @NonNull
     @Override
-    public AhadethViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public HadyeathverseViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ahadethh, parent, false);
-        return new AhadethViewholder(view);
+        return new HadyeathverseViewholder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AhadethViewholder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull HadyeathverseViewholder holder, @SuppressLint("RecyclerView") int position) {
 
-        holder.hadethno.setText(ahadeth[position]);
+        holder.hadethno.setText(ahadeth.get(position));
         holder.hadethno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hadethitem.onhadethclickfun(ahadeth[position], position);
+                hadethitem.onhadethclickfun(ahadeth.get(position), position);
 
             }
         });
@@ -55,14 +46,14 @@ public class AhdethAdapter extends RecyclerView.Adapter<AhdethAdapter.AhadethVie
     public Onhadethclickedinterface hadethitem;
     @Override
     public int getItemCount() {
-        return ahadeth.length;
+        return ahadeth.size();
     }
 
-    class AhadethViewholder extends RecyclerView.ViewHolder {
+    class HadyeathverseViewholder extends RecyclerView.ViewHolder {
 
         TextView hadethno;
 
-        public AhadethViewholder(@NonNull View itemView) {
+        public HadyeathverseViewholder(@NonNull View itemView) {
             super(itemView);
             hadethno = itemView.findViewById(R.id.hadethname);
 

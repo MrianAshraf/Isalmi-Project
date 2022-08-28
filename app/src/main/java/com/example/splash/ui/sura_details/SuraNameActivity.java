@@ -28,6 +28,7 @@ public class SuraNameActivity extends AppCompatActivity
         super.onCreate(SaveInstantStatement);
         setContentView(R.layout.activity_sura_details);
         sura_verse_recycler_viwes = findViewById(R.id.sura_verse_recycler_viwes);
+      //////////
         SuraNameTextView = findViewById(R.id.suraname);
         String fileName = getIntent().getStringExtra("file_name");
         String sura = getIntent().getStringExtra("sura_name");

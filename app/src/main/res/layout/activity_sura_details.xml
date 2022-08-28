@@ -14,25 +14,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="34sp"
-        android:text="' الفاتحه'"
-        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textStyle="bold"
+        android:textSize="26sp"
+        android:textStyle="italic"
+        tools:text="alfatha"
+        android:layout_margin="8dp"
+/>
+    <View
+        android:id="@+id/suraline"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gold"
+        app:layout_constraintTop_toBottomOf="@id/suraname"
+        android:layout_margin="10dp"
         />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/sura_verse_recycler_viwes"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="130dp"
-        android:foregroundGravity="center"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/suraname" />
+        app:layout_constraintTop_toBottomOf="@id/suraline"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:padding="10dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

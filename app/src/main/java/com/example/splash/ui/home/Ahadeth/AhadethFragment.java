@@ -1,62 +1,60 @@
 package com.example.splash.ui.home.Ahadeth;
 
+import android.content.Intent;
 import android.os.Bundle;
-
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.splash.R;
 
-import java.util.ArrayList;
-
 public class AhadethFragment extends Fragment {
-RecyclerView HadRec;
+
+    RecyclerView ahadethrv;
+    String [] ahadethsname=new String [50];
+    public AhadethFragment() {
+        // Required empty public constructor
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
-    {
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.hadethitem, container, false);
     }
+
     @Override
-    public  void onViewCreated(View view ,Bundle SaveInstanceState)
-    {
-        super.onCreate(SaveInstanceState);
-        HadRec=view.findViewById(R.id.HadethRecyclarView);
-        ArrayList<HadethModel> list= getlist();
-        initRccy(list);
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ahadethrv=view.findViewById(R.id.HadethRecyclarView);
+        fillarray(ahadethsname);
+        AhdethAdapter hadethobj=new AhdethAdapter(ahadethsname);
+        hadethobj.hadethitem = new AhdethAdapter.Onhadethclickedinterface(){
+            @Override
+            public void onhadethclickfun(String itemname, int index) {
+                startscreen(itemname,"h"+(index+1)+".txt");
 
-
+            }
+        };
+        ahadethrv.setAdapter(hadethobj);
     }
 
-    private void initRccy(ArrayList<HadethModel> list)
+    public void fillarray(String[]ahadeths)
     {
-
-        AhdethAdapter adapter= new AhdethAdapter(list);
-        RecyclerView.LayoutManager layoutManager= new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
-        HadRec.setLayoutManager(layoutManager);
-        HadRec.setAdapter(adapter);
-    }
-
-
-    private ArrayList<HadethModel> getlist()
-    {
-        ArrayList<HadethModel> list= new ArrayList<> ();
-        for(int i=0; i<40;i++)
+        for (int i = 0 ; i<50 ; i++)
         {
-               String S="رقم الحديث"+1;
-               list.add( new HadethModel(S));
-            Log.e("getlist",list.toString());
+            ahadeths[i] ="الحديث رقم " +(i+1);
         }
-              return list;
+    }
+
+    private void startscreen(String hadethname,String filename) {
+        // start hadeeth screen according to hadeth name
+        Intent intent = new Intent(getActivity(), HadethActivity.class);
+        intent.putExtra("HadethName", hadethname);
+        intent.putExtra("FileName",filename);
+        startActivity(intent);
     }
 }
-
-
-

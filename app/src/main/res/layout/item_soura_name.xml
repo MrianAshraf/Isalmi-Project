@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/item_sura_name_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="184dp"
-        android:text="الفاتحه"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:textSize="24sp"
+        android:layout_margin="8dp"
+        android:text="الفاتحة"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.004"
-       android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="1dp"
+        android:background="@color/gold"
+        app:layout_constraintTop_toBottomOf="@id/item_sura_name_title"
+        android:layout_margin="10dp"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

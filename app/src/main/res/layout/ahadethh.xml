@@ -6,17 +6,26 @@
     >
 
      <TextView
-         android:id="@+id/numberofhadeth"
+         android:id="@+id/hadethname"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
+         app:layout_constraintTop_toTopOf="parent"
+         android:textSize="24sp"
+         android:text="' الحديث'"
+         android:layout_marginTop="30dp"
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintTop_toTopOf="parent"
-         android:text="الحديث رقم"
          android:textStyle="bold"
-         android:textSize="20sp"
-         android:layout_marginTop="10dp"
-/>
-
-
+         />
+     <View
+         android:id="@+id/downline"
+         android:layout_width="0dp"
+         app:layout_constraintWidth_percent="0.5"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         android:layout_height="1dp"
+         android:background="@color/gold"
+         app:layout_constraintTop_toBottomOf="@id/hadethname"
+         android:layout_margin="10dp"
+         />
 </androidx.constraintlayout.widget.ConstraintLayout>
